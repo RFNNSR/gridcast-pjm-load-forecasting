@@ -1,0 +1,32 @@
+[project]
+name = "gridcast-pjm-load-forcasting"
+version = "0.1.0"
+description = "PJM hourly load forecasting + monitoring"
+authors = [
+    {name = "RFNNSR",email = "a.e.nasiri@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "numpy (>=2.4.3,<3.0.0)",
+    "pyarrow (>=23.0.1,<24.0.0)",
+    "scikit-learn (>=1.8.0,<2.0.0)",
+    "lightgbm (>=4.6.0,<5.0.0)",
+    "pandas (>=2.2,<3)",
+    "mlflow (>=3.10.1,<4.0.0)",
+    "prefect (>=3.6.23,<4.0.0)",
+    "sqlalchemy (>=2.0.48,<3.0.0)",
+    "psycopg2-binary (>=2.9.11,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.2,<10.0.0)",
+    "ruff (>=0.15.8,<0.16.0)",
+    "black (>=26.3.1,<27.0.0)"
+]
