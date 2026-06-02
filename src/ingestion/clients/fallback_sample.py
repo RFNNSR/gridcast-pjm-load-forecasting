@@ -30,7 +30,5 @@ class FallbackSampleClient(LoadClient):
         return df.loc[mask_rule].copy()
 
 if __name__ == "__main__":
-
-    sample = FallbackSampleClient()
-
-    print(sample.fetch("2002-12-31 00:00:00" ,"2002-12-31 10:00:00" ))
+    ...
+    
