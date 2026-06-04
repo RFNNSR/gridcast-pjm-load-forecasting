@@ -22,7 +22,7 @@ class FallbackSampleClient(LoadClient):
             raise ValueError(f"{DATETIME_COL} column cant be found")
         
             
-        df[DATETIME_COL]= pd.to_datetime( df[DATETIME_COL], errors="coerce" )    
+        df[DATETIME_COL]= pd.to_datetime( df[DATETIME_COL], errors="coerce")    
         df =df.sort_values(DATETIME_COL).reset_index(drop=True)
         start_datetime_dt =pd.to_datetime(  start_datetime_str)
         end_datetime_dt =pd.to_datetime(  end_datetime_str)
@@ -30,5 +30,6 @@ class FallbackSampleClient(LoadClient):
         return df.loc[mask_rule].copy()
 
 if __name__ == "__main__":
-    ...
+    obj = FallbackSampleClient()
+    print ( obj.fetch("2002-12-31 00:00:00","2002-12-31 09:00:00" ))
     
