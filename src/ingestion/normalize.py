@@ -18,8 +18,10 @@ def normalize_load(df: pd.DataFrame,
      if the timestamp column already has the time zone the source_tz will be ignored.
     """ 
     
-    if not dt_col in df.columns or not load_col in df.columns :
+    if not dt_col in df.columns:
         raise ValueError(f" {dt_col} column can't be found ")
+    if not load_col in df.columns :
+        raise ValueError(f" {load_col} column can't be found ")
     out = df[[dt_col,load_col]].copy()
     out[dt_col] = pd.to_datetime(out[dt_col], errors="coerce")
     
